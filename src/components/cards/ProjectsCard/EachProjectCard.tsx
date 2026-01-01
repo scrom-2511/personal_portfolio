@@ -1,21 +1,7 @@
-import { Facebook, Github, Globe, MoveRight, MoveUpRight, Twitter, X } from "lucide-react";
-import { Button } from "../ui/button";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { Facebook, Github, MoveUpRight, Twitter } from "lucide-react";
 
-const ProjectsCard = () => {
-  return <ProjectsHeader />;
-};
-
-export default ProjectsCard;
-
-const ProjectCard = () => {
+export const EachProjectCard = () => {
   return (
     <Card className="p-10">
       <div className="flex flex-row justify-between">
@@ -43,19 +29,5 @@ const ProjectCard = () => {
         <Facebook></Facebook>
       </div>
     </Card>
-  );
-};
-
-const ProjectsHeader = () => {
-  return (
-    <div>
-      <h1 className="text-xl font-semibold my-5">My Projects</h1>
-      <div className="grid grid-cols-2 w-full gap-5">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-      </div>
-    </div>
   );
 };
