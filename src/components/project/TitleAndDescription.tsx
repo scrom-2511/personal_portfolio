@@ -1,15 +1,10 @@
 import { CardDescription, CardTitle } from "../ui/card";
 
-const TitleAndDescription = () => {
+const TitleAndDescription = ({title, description}:{title: string, description: string}) => {
   return (
     <div>
-      <CardTitle className="text-3xl">Project Name</CardTitle>
-      <CardDescription className="mt-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae rerum ex
-        debitis architecto commodi inventore, minus doloremque officia
-        repellendus aut perferendis quidem nam optio blanditiis eveniet eum
-        voluptas odit reprehenderit veritatis obcaecati!
-      </CardDescription>
+      <CardTitle className="text-3xl">{title}</CardTitle>
+      <CardDescription className="mt-4">{description}</CardDescription>
     </div>
   );
 };

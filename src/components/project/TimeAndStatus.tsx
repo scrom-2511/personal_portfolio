@@ -1,7 +1,8 @@
+import { Status } from "@/types";
 import { Button } from "../ui/button";
 import { CardDescription, CardTitle } from "../ui/card";
 
-const TimeAndStatus = () => {
+const TimeAndStatus = ({timeline, status}:{timeline: string, status:Status}) => {
   return (
     <div className="grid grid-cols-2 w-full gap-5 py-8">
       <Button variant={"outline"} className="flex flex-col items-center justify-center h-20">
