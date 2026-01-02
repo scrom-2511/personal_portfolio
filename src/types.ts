@@ -190,9 +190,18 @@ export enum ProjectTechnologies {
   NX = "https://skillicons.dev/icons?i=nx",
 }
 
+export enum Status {
+  "Completed",
+  "Working"
+}
+
 export interface Project {
+  project_image: string;
   project_name: string;
   short_description: string;
   long_description: string;
   technologies: Array<ProjectTechnologies>;
+  features: Array<string>;
+  timeline: string,
+  status: Status
 }

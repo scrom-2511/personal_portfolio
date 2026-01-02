@@ -9,10 +9,6 @@ export const CardFooterMain = () => {
         <MapPin size={0.5} color="red"></MapPin>
         India, Remote
       </Button>
-      <Button variant="outline" className="h-8 text-[12px]">
-        <Code size={0.5} color="#0074bd"></Code>
-        End to End Applications
-      </Button>
     </CardFooter>
   );
 }

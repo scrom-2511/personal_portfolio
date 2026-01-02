@@ -1,28 +1,36 @@
-"use client"
+"use client";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Project, ProjectTechnologies } from "@/types";
+import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import { Facebook, Github, MoveUpRight, Twitter } from "lucide-react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export const EachProjectCard = ({ project, redirect_string }: { project: Project, redirect_string: string }) => {
+export const EachProjectCard = ({
+  project,
+  redirect_string,
+}: {
+  project: Project;
+  redirect_string: string;
+}) => {
   const router = useRouter();
   const handleOnClick = () => {
     router.push(redirect_string);
-  }
+  };
   return (
-    <Card className="p-10" onClick={handleOnClick}>
+    <Card className="p-8" onClick={handleOnClick}>
       <div className="flex flex-row justify-between">
         <CardTitle className="text-xl">{project.project_name}</CardTitle>
         <div className="flex flex-row items-center gap-3">
           <a href="somethign">
-            <Github></Github>
+            <Github size={20}></Github>
           </a>
           <a href="">
-            <MoveUpRight></MoveUpRight>
+            <MoveUpRight size={20}></MoveUpRight>
           </a>
         </div>
       </div>
-      <div className="w-full h-36 bg-white rounded-2xl"></div>
+      <ProjectImage image=""/>
       <CardDescription>{project.short_description}</CardDescription>
       <Technologies technologies={project.technologies} />
     </Card>
@@ -45,3 +53,18 @@ const Technologies = ({
     </div>
   );
 };
+
+function ProjectImage({ image }: { image: string }) {
+  return (
+    <div>
+      <AspectRatio ratio={16 / 9} className="bg-muted rounded-lg">
+        <Image
+          src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+          alt="Photo by Drew Beamer"
+          fill
+          className="h-full w-full rounded-lg object-cover dark:brightness-[0.2] dark:grayscale"
+        />
+      </AspectRatio>
+    </div>
+  );
+}

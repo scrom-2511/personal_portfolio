@@ -1,5 +1,6 @@
 import { BackToProjects } from "@/components/project/BackToProjects";
 import Features from "@/components/project/Features";
+import { ProjectImage } from "@/components/project/ProjectImage";
 import TimeAndStatus from "@/components/project/TimeAndStatus";
 import TitleAndDescription from "@/components/project/TitleAndDescription";
 import { projects } from "@/projects";
@@ -27,6 +28,7 @@ const Page = async ({ params }: PageProps) => {
   return (
     <div className="w-full">
       <BackToProjects />
+      <ProjectImage image={project.project_image}/>
       <TitleAndDescription
         title={project.project_name}
         description={project.long_description}

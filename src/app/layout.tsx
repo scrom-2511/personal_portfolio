@@ -36,7 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-[#1c191a]">
-            <main className="flex min-h-screen w-full max-w-3xl flex-col items-center gap-5 py-10 bg-white dark:bg-[#1c191a] sm:items-start">
+            <main className="flex min-h-screen w-full max-w-3xl flex-col items-center gap-5 py-10 bg-white dark:bg-[#1c191a] sm:items-start px-10">
               <TopBar/>
               {children}
             </main>
