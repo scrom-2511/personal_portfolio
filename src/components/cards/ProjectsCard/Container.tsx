@@ -27,7 +27,7 @@ export const ProjectsContainer = () => {
     <div>
       <div className="grid grid-cols-2 w-full gap-5">
         {projects.map((project) => (
-          <EachProjectCard project={project} />
+          <EachProjectCard project={project} redirect_string = {`/project/${project.project_name}`}/>
         ))}
       </div>
     </div>

@@ -1,10 +1,16 @@
+"use client"
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Project, ProjectTechnologies } from "@/types";
 import { Facebook, Github, MoveUpRight, Twitter } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-export const EachProjectCard = ({ project }: { project: Project }) => {
+export const EachProjectCard = ({ project, redirect_string }: { project: Project, redirect_string: string }) => {
+  const router = useRouter();
+  const handleOnClick = () => {
+    router.push(redirect_string);
+  }
   return (
-    <Card className="p-10">
+    <Card className="p-10" onClick={handleOnClick}>
       <div className="flex flex-row justify-between">
         <CardTitle className="text-xl">{project.project_name}</CardTitle>
         <div className="flex flex-row items-center gap-3">
