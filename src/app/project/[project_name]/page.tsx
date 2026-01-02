@@ -1,3 +1,4 @@
+import MotionWrapper from "@/components/motion/MotionWrapper";
 import { BackToProjects } from "@/components/project/BackToProjects";
 import Features from "@/components/project/Features";
 import { ProjectImage } from "@/components/project/ProjectImage";
@@ -26,7 +27,8 @@ const Page = async ({ params }: PageProps) => {
   }
 
   return (
-    <div className="w-full">
+    <MotionWrapper>
+      <div className="w-full">
       <BackToProjects />
       <ProjectImage image={project.project_image}/>
       <TitleAndDescription
@@ -39,6 +41,7 @@ const Page = async ({ params }: PageProps) => {
       />
       <Features features={project.features} />
     </div>
+    </MotionWrapper>
   );
 };
 
